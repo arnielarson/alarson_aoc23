@@ -11,19 +11,18 @@ data = open("../data/" + sys.argv[1]).readlines()
 m=[]
 idx=0
 
-
 for line in data:
   if line.startswith("seeds"):
     seeds=[int(x) for x in line.split()[1:]]
-        
   elif line.find("map") > 1:
-    print(f"map:  {line[:line.find('map')]}")
+    print(f"map {line.find('map')}")
     m.append([])
 
   elif line.strip() == "":
+    print("empty line")
     if len(m) > 0:
       idx+=1
-  else: # generate and add the mapping
+  else: # generate the mapping
     nm = [int(x) for x in line.split()]
     m[idx].append(nm)
  
@@ -34,24 +33,33 @@ for line in data:
       m[idx][i]=dst
       dst+=1
     """
-
-locs = []
-# process seeds (forward map)
-# now test seeds
+mseed = seeds[0]
+# process seeds
+"""
 for s in seeds:
   l=s 
+  print(f"Seeds {s}")
   for mx in m:
     for mn in mx:
       if l>= mn[1] and l< mn[1]+mn[2]:  # found, now map
         l=mn[0] + l - mn[1]
         break
-
-  print(f"Location of seed {s} is {l}")
+  print(f"Location of {s} is {l}")
   locs.append(l)
+"""
   
-locs.sort()
-print(locs)
-print(f"Lowest location is {locs[0]}")
+# process seeds part b
+for i in range(0, len(seeds),2):
+  for s in range(seeds[i],seeds[i]+seeds[i+1]):
+    l = s
+    for mx in m:
+      for mn in mx:
+        if l>= mn[1] and l< mn[1]+mn[2]:  # found, now map
+          l=mn[0] + l - mn[1]
+          break
+    if l < mseed:
+      mseed = l
+print(mseed)
 
 
 
