@@ -1,0 +1,82 @@
+# Reminders in Python
+
+# Strings
+
+str.split() # defaults to whitespace
+
+str.startswith("word") # do string comparisons, inefficient most likely but easish
+
+str.strip(); rstrip(); lstrip()  # optionally add "chars" to strip instead of default
+
+c.isdigit()
+c.isnumeric()
+
+str.find("sub") # returns the index of sub or -1
+
+"sub" in s      # fast way to check inclusion..  
+
+
+# lists, maps, filters and all that
+
+# enumerate can be used to keep a index with a list
+for i,v in enumerate(my_list):
+  # i will be index
+  # v will be value
+
+
+map(fn, iter), probably easier to just do list comprehension
+x = [np.pow(i) for i in iter]
+
+x = list(filter(bn_fn, iter))      # bn_fn should return True or False, need to convert to list 
+x = [i for i in seq if bn_fn(i)]   # maybe simpler reduce type functionality
+lambda x: np.pow(x, 2)             # inline function example
+
+# example of 2 dimension comprehension with condition, much more concise than two for loops
+[(x, y) for x in [1,2,3] for y in [3,1,4] if x != y] 
+
+# and comprehensions can be nested like this, (note this is a nifty matrix transpose exmaple
+[[row[i] for row in matrix] for i in range(4)]
+
+
+# Also, good write up on sorting
+https://docs.python.org/3/howto/sorting.html#
+
+# Decorate-Sort-Undecorate pattern
+
+# iterate through dict
+for k,v in m.items():
+  k,v
+
+
+
+
+
+
+
+functools.reduce(fn, seq)          # maps seq to single element right to left
+
+# reminder that lists have a pop() and popleft() command to implement stack and fifo queue like behavior
+
+
+#*****************************************************************************#
+# import re
+
+s = re.sub("regex", "replace", s)  # return a new copy with subs
+
+re.findall(r"regex", s)
+
+re.split(r"regex", s)
+
+
+
+# fudging a matrix layout to improve boundary condition handling, not necessarily efficient, but 
+# likely will use less code
+
+
+# import sys
+
+data = open("../data/"+sys.argv[1])).read()  # text block (str)
+grid = data.split("\n")                      # list of strings
+grid = ["." + g + "." for g in grid]         # add a boundary (extra cols)
+b = "."*len(grid[0])+"."                     # adds a dummy row (if grid is symmetric)
+grid = [b] + grid + [b]
