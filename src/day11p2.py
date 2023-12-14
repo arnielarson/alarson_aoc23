@@ -13,6 +13,14 @@ print("hello day 11")
   depend on path.  However, also, paths from A to B will be consistent
   Still map back to manhattan distance in terms of steps. 
   So.. maybe use a node class to manage the distances
+
+  Note, although it was fun to implement BFS, I didn't need to, 
+  (turns out in retrospect), since all points on the grid were valid
+  to move through, just needed to find delta_x and delta_y..
+
+  Hopefully didn't waste hours thinking through search
+  Will be a lesson for next one..
+  
 """
    	
 
