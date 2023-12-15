@@ -23,6 +23,8 @@ for i,v in enumerate(my_list):
   # i will be index
   # v will be value
 
+# flatten a list of lists
+[x for row in matrix for x in row]
 
 map(fn, iter), probably easier to just do list comprehension
 x = [np.pow(i) for i in iter]
