@@ -17,3 +17,7 @@ Advent of Code 2023
 - Problem 13 - finding symmetries (reflections) in 2D patterns.  Kind of novel, had to write a lot of code to get it right, also had to reread several times to figure out the constraints.
 
 - Problem 14 - Kind of cool - pretend the grid is like a surface with objects on it, some fixed some that can move (rocks), and the surface can be tilted so that the objects accumulate on a side.  Part 2 is to tilt the surface NWSE 1B times..  My computer can't really do that many computations in a reasonable time, so the trick is to find out how and when the surface gets into a stable subcycle and can predict object locations at later points..
+
+- Problem 17 - travelling through a map minimizing some cost.  Obviously a heap problem although in my first implementation I did just do a sort on the list of frontier nodes.  I later figured out how to use the heapq package from Python which I know I've done in the past.
+
+- Problem 18 - Another topological interior / exterior problem.  Spent a lot of time trying to find a generative solution that was better than what'd I'd done in 10.  I did and it was fun and somewhat novel but had no hope of solving part b :)  I had to again peak at someone elses solution to realize that you really need some math, Pick's theorem and some geometry to get the solution.
