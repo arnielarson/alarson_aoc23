@@ -21,3 +21,12 @@ Advent of Code 2023
 - Problem 17 - travelling through a map minimizing some cost.  Obviously a heap problem although in my first implementation I did just do a sort on the list of frontier nodes.  I later figured out how to use the heapq package from Python which I know I've done in the past.
 
 - Problem 18 - Another topological interior / exterior problem.  Spent a lot of time trying to find a generative solution that was better than what'd I'd done in 10.  I did and it was fun and somewhat novel but had no hope of solving part b :)  I had to again peak at someone elses solution to realize that you really need some math, Pick's theorem and some geometry to get the solution.
+
+
+- Problem 19 - processing workflows recursively.  Interesting problem to organize code around.  I ended up creating a workflow class to organize my code.  This lead to solution to part2 where instead of mapping numbers through the workflow, can map ranges, which either map entirely on each step, or at most bifurcate into two ranges, and propagate through workflow.
+
+- Problem 20 - Implement a simulation for comms modules.  Primay miodueles include "flip flops", Conjunctions, both can have multiple outputs, and conjunctions can have multiple inputs.  Also a button, broadcast (which just propagates signal to multiple outputs) and an output (which terminates that pulse.  Implemented modules as classes and used queue to maintain correct ordering of when pulses actuate.  Fun problem, goal is to simulate button presses and part 2 requires looking for cycling behavior.
+
+
+
+
