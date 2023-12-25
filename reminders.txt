@@ -59,6 +59,21 @@ functools.reduce(fn, seq)          # maps seq to single element right to left
 
 # reminder that lists have a pop() and popleft() command to implement stack and fifo queue like behavior
 
+# Also in functools there is total_ordering decorator
+# Requires just one compare operation and generates the others..
+@total_ordering
+class Node:
+  ...
+  def __lt__(self,other):
+    return self.v < other.v
+
+
+# @dataclasses   another decorator that generates some default code (constructors, etc)
+@dataclass
+
+class Box:  
+  x: float = 0.0
+  y: float = 0.0
 
 #*****************************************************************************#
 # import re
