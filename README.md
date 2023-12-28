@@ -2,6 +2,9 @@
 
 Advent of Code 2023
 
+### Take Away
+
+I began these "exercises" without any knowledge of what it would be like or where it would go.  The problems turned out to be engaging and novel and often interesting.  It scratched the part of my brain where alroithms used to reside and I dusted off some of the cobwebs there.  Many of the puzzles I was able to complete on a first go in one sitting.  Some of the part 2's were too difficult to figure out on my own and I resorted to looking at how others approached them.  I learned a few things in the process and remembered many a thing I've studied in the past.  I hope that if life permits I'll try it again next year.
 
 ### Select Problem Notes
 
