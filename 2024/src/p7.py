@@ -13,6 +13,7 @@ db="data/6b.txt"
   the data is not quite big enough to be a problem to just brute force... for part 1
   
   However - Part 2?  I almost guarantee it will require dynamic programming..
+  part 2 just adds an operatore (||) concatenate
 """
 
 r= [y.split(":") for y in open(db, 'r').read().strip().split("\n")]
@@ -53,6 +54,7 @@ def gen_perms(m,l=None):
 
 """
   Part 1, for each line, generate rules permutations, and apply them to all elements..
+  Part 2, just adds one more 
 """
 def part1(r):
   c=0

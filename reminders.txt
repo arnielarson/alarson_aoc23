@@ -18,6 +18,7 @@ str.find("sub") # returns the index of sub or -1
 
 # lists, maps, filters and all that
 
+
 # enumerate can be used to keep a index with a list
 for i,v in enumerate(my_list):
   # i will be index
@@ -26,7 +27,7 @@ for i,v in enumerate(my_list):
 # flatten a list of lists
 [x for row in matrix for x in row]
 
-map(fn, iter), probably easier to just do list comprehension
+map(fn, iter), probably easier to just do list comprehension, need to convert to list if you need random access
 x = [np.pow(i) for i in iter]
 
 x = list(filter(bn_fn, iter))      # bn_fn should return True or False, need to convert to list 
@@ -50,7 +51,53 @@ for k,v in m.items():
   k,v
 
 
+# Itertools..
 
+Find all combinations of 'a' 'b' of length 3..
+itertools.product('ab',repeat=3)
+
+Find all permutations of 'ABCD' of length 3.. (Permutations means just switching, so no replacement.. e.g. 'ABCD' of length 5 => None)
+itertools.permutations('ABCD',3)
+
+Find all permutations of ABCD of length 3, ignore order (Combination)
+itertools.permutations('ABCD',3)
+
+
+
+# Collections..
+from collections import defaultdict
+d = defaultdict(int) # default to 0, (str -> '' ; list -> [] ; lambda x: some_other_default ; )
+if you lookup an item, it will join the list of keys..
+
+
+from colleciton import Counter
+# acts a lot like a default dictionary with int..
+
+
+
+# Algorithms and Data Structures
+
+Heaps can be used to implement priority queues, lowest number represents highest priority, out first
+import heapq
+
+a = [3,4,2,5] # or some other set of values, default is lowest first
+heapq.heapify(a)
+heapq.heappush(a, item)
+e=heapq.heappop(a)
+# can merge multiple iterables..
+heapq.merge(*iterables) # returns the sorted heap.. and has optional key and reverse keywords
+
+# Flood Fill 
+An example of a breadth first search algorithm..  need to exhaustively explore a space  
+For each element in the space, check if it's been seen, 
+if not, explore.  This generates sets of regions.  Example is a 2d map where each region is marked by a 
+specific char.  
+And in AoC 24.12 part 1 goal is to determine the area * perimeter for each region..
+
+Implementation
+(use a deque to keep track of the search space.. use a set to keep track of seen elements)
+Area in this case is just the number of elements in a region..
+For perimeter for each element, check the number of edges that are on the permimeter, and sum..
 
 
 
