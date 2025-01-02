@@ -18,6 +18,9 @@ str.find("sub") # returns the index of sub or -1
 
 # lists, maps, filters and all that
 
+# pro tip - python dictionaries can return a default value with the get function..
+dc = {">":1, "<":-1}.get(x, 0)
+
 
 # enumerate can be used to keep a index with a list
 for i,v in enumerate(my_list):
@@ -81,11 +84,18 @@ Heaps can be used to implement priority queues, lowest number represents highest
 import heapq
 
 a = [3,4,2,5] # or some other set of values, default is lowest first
+l = [(0,'a'),(1,'b'),(10,'c')] # defaults to prioritze on key=e[0]
 heapq.heapify(a)
 heapq.heappush(a, item)
 e=heapq.heappop(a)
 # can merge multiple iterables..
 heapq.merge(*iterables) # returns the sorted heap.. and has optional key and reverse keywords
+
+
+realistically, to keep data in a heap, can use some sort of tuple, and the cost should be the first element, e.g.
+a = [(c, x, y)]
+while a:
+  cost, x, y = heapq.heappop(a)
 
 # Flood Fill 
 An example of a breadth first search algorithm..  need to exhaustively explore a space  
@@ -130,6 +140,11 @@ s = re.sub("regex", "replace", s)  # return a new copy with subs
 re.findall(r"regex", s)
 
 re.split(r"regex", s)
+
+r"string" - raw strings, backslash does not escape anything
+? is 0 or 1
+* is 0 or more
++ is 1 or more
 
 
 
