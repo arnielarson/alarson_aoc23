@@ -32,3 +32,8 @@ d="../data/12a.txt"
 with open(d) as f:
   board=[[s for s in g] for g in open(d).read().strip().split("\n")]
 
+def show(board):
+  for row in board:
+    print("".join(row))
+
+show(board)
